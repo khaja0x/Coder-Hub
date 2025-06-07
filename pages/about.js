@@ -1,19 +1,31 @@
-import Head from "next/head";
 import styles from "../src/app/page.module.css";
+import Image from "next/image";
 import { useState } from "react";
+
+export const metadata = {
+  title: "Coder Hub - About",
+  description: "About Coder Hub - Learn about our coding blog and mission",
+  viewport: "width=device-width, initial-scale=1",
+  openGraph: {
+    title: "Coder Hub - About",
+    description: "About Coder Hub - Learn about our coding blog and mission",
+    type: "website",
+    images: [
+      {
+        url: "/about.jpg", // Replace with actual image path
+        width: 300,
+        height: 200,
+        alt: "About Coder Hub",
+      },
+    ],
+  },
+};
 
 export default function About() {
   const [imageError, setImageError] = useState(false);
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Coder Hub - About</title>
-        <meta name="description" content="About Coder Hub - Learn about our coding blog and mission" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           <span>About Coder Hub</span>
@@ -21,13 +33,14 @@ export default function About() {
 
         <section className={styles.aboutSection}>
           <div className={styles.heroSection}>
-            <img
+            <Image
               className={styles.heroImage}
               src={imageError ? "/placeholder.jpg" : "/about.jpg"}
               alt="About Coder Hub"
               width={300}
               height={200}
               onError={() => setImageError(true)}
+              priority // Optional: Prioritize loading for hero image
             />
             <p className={styles.description}>
               Coder Hub is a passionate community dedicated to sharing coding knowledge and experiences.

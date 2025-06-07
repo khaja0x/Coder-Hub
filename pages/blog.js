@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../src/page.module.css";
+import styles from "../src/app/page.module.css";
 import * as fs from "fs";
 
 const Blog = ({ allBlogs }) => {
