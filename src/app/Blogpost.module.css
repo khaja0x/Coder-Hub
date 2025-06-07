@@ -1,0 +1,262 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content:flex-start;
+    padding-top: 3rem;
+    min-height: 100vh;
+    flex: 1;
+  }
+
+  .container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainnav {
+  background: #333;
+  padding: 1rem;
+}
+
+.mainnav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.mainnav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.mainnav a:hover {
+  color: #1e90ff;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  margin: 2rem 0;
+  text-align: center;
+  color: #333;
+}
+
+.title span {
+  color: #1e90ff;
+}
+
+.heroSection {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heroImage {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.aboutSection {
+  margin-top: 2rem;
+}
+
+.contactSection {
+  margin-top: 2rem;
+}
+
+.blogSection {
+  margin-top: 2rem;
+}
+
+.blogPostContent {
+  margin-top: 2rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.author {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.blogItem {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.blogItem:hover {
+  transform: translateY(-5px);
+}
+
+.blogItemh3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.blogItemh3:hover {
+  color: #1e90ff;
+}
+
+.blogItem p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.noBlogs {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin: 2rem 0;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  color: #333;
+}
+
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.contactForm {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #1e90ff;
+}
+
+.formGroup textarea {
+  resize: vertical;
+}
+
+.submitButton {
+  background: #1e90ff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submitButton:hover {
+  background: #187bcd;
+}
+
+.submitButton:disabled {
+  background: #a0cfff;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #28a745;
+  margin: 2rem 0;
+}
+
+.footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .mainnav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .contactForm {
+    padding: 1rem;
+  }
+
+  .blogItem {
+    padding: 1rem;
+  }
+
+  .blogItemh3 {
+    font-size: 1.3rem;
+  }
+
+  .blogPostContent {
+    padding: 1rem;
+  }
+}
