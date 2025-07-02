@@ -1,49 +1,45 @@
-import styles from "../src/app/page.module.css";
+import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
-
-export const metadata = {
-  title: "Coder Hub - About",
-  description: "About Coder Hub - Learn about our coding blog and mission",
-  viewport: "width=device-width, initial-scale=1",
-  openGraph: {
-    title: "Coder Hub - About",
-    description: "About Coder Hub - Learn about our coding blog and mission",
-    type: "website",
-    images: [
-      {
-        url: "/about.jpg", // Replace with actual image path
-        width: 300,
-        height: 200,
-        alt: "About Coder Hub",
-      },
-    ],
-  },
-};
+import styles from "../src/page.module.css";
 
 export default function About() {
-  const [imageError, setImageError] = useState(false);
-
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Hunting Coder - About</title>
+        <meta name="description" content="About Hunting Coder - Learn about our coding blog and mission" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Hunting Coder - About" />
+        <meta property="og:description" content="About Hunting Coder - Learn about our coding blog and mission" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Hunting Coder" />
+        <meta property="og:image" content="/about.jpg" />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="200" />
+        <meta property="og:image:alt" content="About Hunting Coder" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <main className={styles.main}>
         <h1 className={styles.title}>
-          <span>About Coder Hub</span>
+          <span>About Hunting Coder</span>
         </h1>
 
         <section className={styles.aboutSection}>
           <div className={styles.heroSection}>
             <Image
               className={styles.heroImage}
-              src={imageError ? "/placeholder.jpg" : "/about.jpg"}
-              alt="About Coder Hub"
+              src="/about.jpg"
+              alt="About Hunting Coder"
               width={300}
               height={200}
-              onError={() => setImageError(true)}
+              onError={(e) => {
+                e.target.src = "/placeholder.jpg"; // Fallback on error
+              }}
               priority // Optional: Prioritize loading for hero image
             />
             <p className={styles.description}>
-              Coder Hub is a passionate community dedicated to sharing coding knowledge and experiences.
+              Hunting Coder is a passionate community dedicated to sharing coding knowledge and experiences.
             </p>
           </div>
 
@@ -51,7 +47,7 @@ export default function About() {
             <h2>Our Mission</h2>
             <p>
               Our mission is to empower developers of all levels by providing insightful tutorials, tips, and resources
-              to master modern programming technologies. Whether you're a beginner or an experienced coder, we aim
+              to master modern programming technologies. Whether you\'re a beginner or an experienced coder, we aim
               to help you navigate the ever-evolving world of software development.
             </p>
 
@@ -62,9 +58,9 @@ export default function About() {
               in your coding journey.
             </p>
 
-            <h2>Why Coder Hub?</h2>
+            <h2>Why Hunting Coder?</h2>
             <p>
-              The name "Coder Hub" reflects our passion for hunting down solutions to complex coding
+              The name "Hunting Coder" reflects our passion for hunting down solutions to complex coding
               problems and sharing them with the community. We believe in learning by doing, and our blog is a
               reflection of that philosophy.
             </p>
@@ -73,7 +69,7 @@ export default function About() {
       </main>
 
       <footer className={styles.footer}>
-        <p>© {new Date().getFullYear()} Coder Hub. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Hunting Coder. All rights reserved.</p>
       </footer>
     </div>
   );
